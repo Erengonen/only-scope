@@ -28,16 +28,6 @@ const config: HardhatUserConfig = {
     typechain: {
         outDir: "typechain",
     },
-    // networks: {
-    //     localhost: {
-    //     },
-    //     hardhat: {
-          
-    //     },
-    //     coverage: {
-    //         url: "http://localhost:8555",
-    //     },
-    // }
 };
 
 export default config;

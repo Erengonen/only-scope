@@ -1,10 +1,10 @@
 {
-  "name": "@prb/hardhat-template",
-  "description": "Hardhat-based template for developing Solidity smart contracts",
+  "name": "only-scope",
+  "description": "Hardhat test coverage configuration tool.",
   "version": "1.0.0",
   "author": {
-    "name": "Paul Razvan Berg",
-    "url": "https://github.com/paulrberg"
+    "name": "Eren",
+    "url": "https://github.com/erengonen"
   },
   "devDependencies": {
     "@ethersproject/abi": "^5.7.0",

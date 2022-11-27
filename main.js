@@ -1,12 +1,7 @@
-
 const fs = require('fs');
-const path = require('path');
-const { readdir } = require('fs/promises');
-const {readFileSync, promises: fsPromises} = require('fs');
+const {readFileSync} = require('fs');
 const DIRECTORY = "contracts";
 const FILE_SCOPE = "scope.txt";
-
-work();
 
 function findSolNames () {
     let solList = []
@@ -22,14 +17,15 @@ function findSolNames () {
 };
 
 
-function getFilelistRecursively(targetpath) {
+function getFilelistRecursively(targetPath) {
     let result = [];
-    const dirs = fs.readdirSync(targetpath);
+    const dirs = fs.readdirSync(targetPath);
     const scope = findSolNames();
     dirs.forEach(file => {
-        let filepath = targetpath + "/" + file;
+        let filepath = targetPath + "/" + file;
         if ( fs.lstatSync(filepath).isDirectory()) {
             result = result.concat( getFilelistRecursively(filepath));
+
         } else if(filepath.endsWith("sol")){
             filepath = filepath.replace(DIRECTORY,".");
             let contractName = filepath.replace(/['"]+/g, '').split('/').pop();
@@ -59,3 +55,5 @@ function work () {
     `
     writeFile(template);
 };
+
+work();
